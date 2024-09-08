@@ -85,6 +85,8 @@ def request_glados(cookie):
             res['status'] = 'Checkin ERROR:' + str(_response.status_code)
     except Exception as e:
         print("Exception", e)
+        if 'status' not in res:
+            res['status'] = 'HTTP ERROR'
         res['message'] = f"签到状态异常：{e}"
     if res['status'] != 'Checkin OK':
         res['leftDays'] = '--'
