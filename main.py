@@ -17,7 +17,7 @@ app_secret = os.environ["APP_SECRET"]
 user_ids = os.environ["USER_ID"].split(',')
 template_id = os.environ["TEMPLATE_ID"]
 citys = os.environ["CITY"]
-cookie = # os.environ["GLADOS_COOKIE"].split(',')
+cookie = os.environ["GLADOS_COOKIE"]
 
 
 # 获取天气和温度
