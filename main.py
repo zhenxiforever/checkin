@@ -16,8 +16,8 @@ app_secret = os.environ["APP_SECRET"]
 # 可把os.environ结果替换成字符串在本地调试
 user_ids = os.environ["USER_ID"].split(',')
 template_id = os.environ["TEMPLATE_ID"]
-citys = os.environ["CITY"]
 cookie = os.environ["GLADOS_COOKIE"]
+citys = os.environ["CITY"]
 
 
 # 获取天气和温度
