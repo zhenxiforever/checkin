@@ -3,6 +3,14 @@
 GitHub Actions 实现 [GLaDOS][glados] 自动签到
 
 ([GLaDOS][glados] 可用邀请码: `1TJAU-JLPBN-NLSWV-5QTUF`, 双方都有奖励天数)
+1. 直接注册GLaDOS(注册地址在 https://github.com/glados-network/GLaDOS 实时更新)
+
+成功后输入邀请码:1TJAU-JLPBN-NLSWV-5QTUF 激活
+
+2. 通过 https://glados.space/landing/1TJAU-JLPBN-NLSWV-5QTUF 注册, 自动填写激活
+
+3. 通过 https://1tjau-jlpbn-nlswv-5qtuf.glados.space , 自动填写激活
+
 
 ## 使用说明
 
