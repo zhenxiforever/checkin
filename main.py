@@ -25,13 +25,13 @@ def get_weather(city, appkey):
     # 接口已失效
     # url = "http://autodev.openspeech.cn/csp/api/v2.1/weather?openId=aiuicus&clientType=android&sign=android&city=" + city
     _url = "http://op.juhe.cn/onebox/weather/query"
-    params = {
+    _params = {
         "cityname": city,  # 要查询的城市，如：温州、上海、北京
         "key": appkey,  # 应用APPKEY(应用详细页查询)
         "dtype": "json",  # 返回数据的格式,xml或json，默认json
     }
-    params = urllib.urlencode(params)
-    res = requests.get(_url, params=params).json()
+    _params = urllib.urlencode(_params)
+    res = requests.get(_url, params=_params).json()
     weather = res['result']['future'][0]
     return weather['weather'], weather['temperature']
 
