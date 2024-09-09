@@ -65,6 +65,7 @@ def request_glados(cookie):
         _body = {"token": "glados.one"}
         _response = requests.post(_url, json=_body, headers=headers, timeout=5)
         if _response.status_code == 200:
+            print(_response.json())
             res['message'] = _response.json()["message"]
             if _response.json()['code'] >= 0:
                 res['status'] = 'Checkin OK'
