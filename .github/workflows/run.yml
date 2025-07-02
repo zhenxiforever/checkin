@@ -23,7 +23,7 @@ name: run
 on:
   schedule:
   # UTC 时间的零点，北京时间的八点。但是由于 Github 同一时间任务太多，因此会有延迟
-    - cron:  '50 0 * * *'
+    - cron:  '50 0,8 * * *'
   workflow_dispatch:
 
 jobs:
