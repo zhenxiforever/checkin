@@ -61,8 +61,10 @@ def request_glados(cookie):
             'referer': 'https://glados.rocks/console/checkin',
             'user-agent': 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)',
         }
-        _url = "https://glados.rocks/api/user/checkin"
-        _body = {"token": "glados.one"}
+        # _url = "https://glados.rocks/api/user/checkin"
+        # _body = {"token": "glados.one"}
+        _url = "https://glados.cloud/api/user/checkin"
+        _body = {"token":"glados.cloud"}
         _response = requests.post(_url, json=_body, headers=headers, timeout=5)
         if _response.status_code == 200:
             print(_response.json())
@@ -72,7 +74,8 @@ def request_glados(cookie):
                 point = _response.json()['list'][0]
                 res['point'] = point['change']
                 res['balance'] = point['balance']
-                _url = "https://glados.rocks/api/user/status"
+                # _url = "https://glados.rocks/api/user/status"
+                _url = "https://glados.cloud/api/user/status"
                 _response = requests.get(_url, headers=headers, timeout=5)
                 if _response.status_code == 200:
                     _data = _response.json()["data"]
