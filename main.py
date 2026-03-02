@@ -16,7 +16,7 @@ app_secret = os.environ["APP_SECRET"]
 # 可把os.environ结果替换成字符串在本地调试
 user_ids = os.environ["USER_ID"].split(',')
 template_id = os.environ["TEMPLATE_ID"]
-cookie = os.environ["GLADOS_COOKIE"]
+cookies = os.environ["GLADOS_COOKIE"].split(',')
 # citys = os.environ["CITY"]
 
 
@@ -107,11 +107,8 @@ if __name__ == "__main__":
     client = WeChatClient(app_id, app_secret)
     wm = WeChatMessage(client)
 
-    for i in range(len(user_ids)):
-        # wea, tem = get_weather(citys[i])
-        # cit, dat = get_city_date(citys[i])
-        # words = get_words('free_id','free_secret');
-        res = request_glados(cookie)
+    for i in range(len(cookies)):
+        res = request_glados(cookies[i])
         data = {
             "date": {"value": res['date'], "color": get_random_color()},
             # "city": {"value": cit, "color": get_random_color()},
@@ -125,5 +122,6 @@ if __name__ == "__main__":
             "balance": {"value": res['balance'], "color": get_random_color()},
             # "words": {"value": words, "color": get_random_color()}
         }
-        res = wm.send_template(user_ids[i], template_id, data)
-        print(res)
+        for j in range(len(user_ids)):
+            res = wm.send_template(user_ids[j], template_id, data)
+            print(res)
