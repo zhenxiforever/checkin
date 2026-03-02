@@ -78,7 +78,6 @@ def request_glados(cookie):
                 _url = "https://glados.cloud/api/user/status"
                 _response = requests.get(_url, headers=headers, timeout=5)
                 if _response.status_code == 200:
-                    print(_response.json())
                     _data = _response.json()["data"]
                     res['leftDays'] = _data['leftDays']
                     res['email'] = _data['email']
