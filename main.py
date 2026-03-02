@@ -78,6 +78,7 @@ def request_glados(cookie):
                 _url = "https://glados.cloud/api/user/status"
                 _response = requests.get(_url, headers=headers, timeout=5)
                 if _response.status_code == 200:
+                    print(_response.json())
                     _data = _response.json()["data"]
                     res['leftDays'] = _data['leftDays']
                     res['email'] = _data['email']
@@ -92,7 +93,7 @@ def request_glados(cookie):
         if 'status' not in res:
             res['status'] = 'HTTP ERROR'
         res['message'] = f"签到状态异常：{e}"
-    if res['status'] != 'Checkin OK':
+    if 'leftDays' not in res:
         res['leftDays'] = '--'
         res['email'] = '--'
         res['days'] = '--'
